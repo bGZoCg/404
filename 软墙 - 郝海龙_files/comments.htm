@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Typlog Comments</title><script async="" src="analytics.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-34098939-10', 'auto');ga('send', 'pageview');</script><link href="comments_data/chunk-vendors.css" rel="preload" as="style"><link href="comments_data/comments.css" rel="preload" as="style"><link href="comments_data/chunk-vendors.js" rel="preload" as="script"><link href="comments_data/comments.js" rel="preload" as="script"><link href="comments_data/chunk-vendors.css" rel="stylesheet"><link href="comments_data/comments.css" rel="stylesheet"><script id="picviewer-page-script">(function(messageID){
+                var frameID=Math.random();
+                var frames={
+                    top:window.top,
+                };
+
+                window.addEventListener('message',function(e){
+                    var data=e.data;
+                    if( !data || !data.messageID || data.messageID != messageID )return;//通信ID认证
+                    var source=e.source;
+                    if(source===window){//来自contentscript,发送出去,或者干嘛。
+                        if(data.to){
+                            data.from=frameID;
+                            frames[data.to].postMessage(data,'*');
+                        }else{
+                            switch(data.command){
+                                case 'getIframeObject':{
+                                    var frameWindow=frames[data.windowId];
+                                    var iframes=document.getElementsByTagName('iframe');
+                                    var iframe;
+                                    var targetIframe;
+                                    for(var i=iframes.length-1 ; i>=0 ; i--){
+                                        iframe=iframes[i];
+                                        if(iframe.contentWindow===frameWindow){
+                                            targetIframe=iframe;
+                                            break;
+                                        };
+                                    };
+                                    var cusEvent=document.createEvent('CustomEvent');
+                                    cusEvent.initCustomEvent('pv-getIframeObject',false,false,targetIframe);
+                                    document.dispatchEvent(cusEvent);
+                                }break;
+                            };
+                        };
+
+                    }else{//来自别的窗口的，contentscript可以直接接收，这里保存下来自的窗口的引用
+                        frames[data.from]=source;
+                    };
+                },true)
+            })("pv-0.5106795670312598")</script></head><body class="vsc-initialized"><noscript><strong>We're sorry but Typlog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" style="--primary-color: 221,60,63;"><div class="head"><div class="head_tab"><svg aria-label="Likes" class="svg-icon"><use xlink:href="#heart"></use></svg><span>3</span></div><div class="head_tab"><svg aria-label="Reposts" class="svg-icon"><use xlink:href="#repeat"></use></svg><span>0</span></div><div class="head_tab _active"><svg aria-label="Comments" class="svg-icon"><use xlink:href="#message-square"></use></svg><span>1</span></div></div><div class="main"><!----><!----><div class="message-list"><div class="form"><p tabindex="0" class="placeholder">Share your thoughts...</p><div aria-placeholder="Share your thoughts..." class="form_main" contenteditable="true"><p><br></p></div><form class="info"><label class="name"><input type="text" placeholder="Name" maxlength="20" required="required"></label><label class="email"><input type="email" placeholder="Email" required="required"></label><button class="button"><span>Send</span></button></form></div><div class="message"><div class="message_avatar"><a target="_blank"><div class="avatar _circle _text" style="width: 48px; height: 48px; font-size: calc(24px); background-color: rgb(255, 239, 186); line-height: 48px;"><span>S</span></div></a></div><div class="message_main"><div class="message_meta"><strong>SKYue</strong><!----><!----></div><div class="message_content"><p>有段时间，这个「继续访问」的按钮都没有，只能自己复制链接到浏览器打开，真要命。</p></div></div></div></div></div><div class="app_svgs"><svg xmlns="http://www.w3.org/2000/svg"><defs><symbol id="heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></symbol>
+<symbol id="message-square" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></symbol>
+<symbol id="repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></symbol>
+<symbol id="twitter" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></symbol>
+</defs></svg></div></div><script src="comments_data/chunk-vendors.js"></script><script src="comments_data/comments.js"></script></body></html>
